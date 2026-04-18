@@ -1,0 +1,76 @@
+.slider {
+    padding: $zero !important;
+    overflow: hidden;
+    @media (max-width: 999px) {}
+    .itemslider {
+        @include styleslider;
+        // height: 72vh;
+        margin-top: $com-spacing-4;
+        @media (max-width: 999px) {
+            // height: 60vh;
+        }
+    }
+    .slick-list {
+        @media (max-width: 999px) {}
+    }
+    .item {
+        direction: rtl;
+        vertical-align: top;
+        display: inline-block;
+        margin: $zero $com-spacing-2;
+        background: $white;
+        .photo {
+            display: block;
+            position: relative;
+            background: $ofwhite;
+            width: $fullwidth;
+            height: 72vh;
+            border-radius: 12px;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                height: 60vh;
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+            }
+        }
+        .contant {
+            opacity: 0;
+            position: absolute;
+            bottom: $zero;
+            width: $fullwidth;
+            padding: $com-spacing-9 $com-spacing-4 $com-spacing-4 $com-spacing-4;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 999px) {}
+            .title {
+                color: $white;
+                font-size: 50px;
+                text-align: center;
+                @media (max-width: 999px) {
+                    font-size: 28px;
+                }
+            }
+            p {
+                color: $white;
+                font-size: 18px;
+                text-align: center;
+                max-width: 60%;
+                margin: auto;
+                @media (max-width: 999px) {
+                    font-size: 16px;
+                    max-width: $fullwidth;
+                }
+            }
+        }
+        &.slick-active {
+            .contant {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//////////////////////// End Slider
