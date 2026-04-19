@@ -21,7 +21,7 @@
         .photos {
             position: relative;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             gap: $com-spacing-6;
             @media (max-width: 767px) {
                 gap: $com-spacing-3;
@@ -472,6 +472,57 @@
                     background: $white;
                     color: #A18D5F;
                 }
+            }
+        }
+    }
+}
+
+.hero-section {
+    padding: $zero !important;
+    margin-top: $com-spacing-6;
+    @media (max-width: 999px) {}
+    .photo {
+        display: block;
+        position: relative;
+        background: $ofwhite;
+        width: $fullwidth;
+        height: 300px;
+        border-radius: 20px;
+        overflow: hidden;
+        @media (max-width: 999px) {}
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .contant {
+        position: absolute;
+        bottom: $zero;
+        width: $fullwidth;
+        padding: $com-spacing-9 $com-spacing-4 $com-spacing-8 $com-spacing-4;
+        background: linear-gradient(180deg, rgba(131, 35, 57, 0) 0%, #640335 100%);
+        @include transition(all 0.5s ease-in-out 0s);
+        &::before {
+            content: "";
+            position: absolute;
+            left: $com-spacing-3;
+            bottom: $com-spacing-3;
+            width: calc(100% - 24px);
+            height: 274px;
+            border-radius: 20px;
+            border: 4px solid #a18d5f;
+            @media (max-width: 767px) {
+                height: 196px;
+            }
+        }
+        .title {
+            color: $white;
+            font-size: 40px;
+            text-align: center;
+            @media (max-width: 999px) {
+                font-size: 28px;
             }
         }
     }
