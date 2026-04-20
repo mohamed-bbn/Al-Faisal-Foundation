@@ -527,3 +527,125 @@
         }
     }
 }
+
+.rules-team {
+    background: #FBF5F3 url(../images/mask.png) no-repeat center center / cover;
+    @media (max-width: 999px) {
+        padding-top: $zero;
+    }
+    .photo {
+        position: absolute;
+        width: calc(50% - 24px);
+        height: $fullwidth;
+        top: $zero;
+        right: $zero;
+        @media (max-width: 999px) {
+            position: relative;
+            width: $fullwidth;
+            height: 60vh;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: $zero;
+            bottom: $zero;
+            width: $fullwidth;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(131, 35, 57, 0) 0%, #640335 100%);
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        @media (max-width: 999px) {
+            justify-content: flex-start;
+        }
+    }
+    .item {
+        position: relative;
+        max-width: 50%;
+        @media (max-width: 999px) {
+            max-width: $fullwidth;
+            margin-top: $com-spacing-6;
+        }
+        .list {
+            margin-top: $com-spacing-6;
+            li {
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-3;
+                margin-top: $com-spacing-5;
+                color: $blak;
+                .icon {
+                    @include flex;
+                    min-width: 30px;
+                    max-width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: #efdee7;
+                }
+            }
+        }
+    }
+}
+
+.general-rules {
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $com-spacing-6;
+        counter-reset: item;
+        padding: $zero;
+        margin-top: $com-spacing-8;
+        @media (max-width: 1199px) {}
+        @media (max-width: 999px) {
+            display: flex;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-6;
+            overflow-y: scroll;
+        }
+    }
+    .item {
+        position: relative;
+        background: $white;
+        padding: $com-spacing-7 $com-spacing-4;
+        border-radius: 20px;
+        border: 1px solid #E8E8E8;
+        counter-increment: item;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 999px) {
+            padding: $com-spacing-6;
+            min-width: 260px;
+            max-width: 260px;
+        }
+        &:before {
+            @include flex;
+            content: counter(item);
+            color: $burgundy;
+            background: #F5EBF0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: auto;
+            font-size: 30px;
+        }
+        &:hover {
+            @include prefixer (box-shadow, 4px 4px 60px #0000002e, webkit moz o ms);
+        }
+        .title {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 400;
+            margin-top: $com-spacing-3;
+            @media (max-width: 999px) {}
+        }
+    }
+}
+
+//////////////////////////////////////////
