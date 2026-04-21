@@ -155,15 +155,19 @@ $(window).on("load", function() {
     });
 
 
-
     let counted = false;
 
     $(window).scroll(function() {
-        let oTop = $('.counter').offset().top - window.innerHeight;
+
+        let counterEl = $('.counter');
+
+        if (counterEl.length === 0) return; // 👈 أهم سطر
+
+        let oTop = counterEl.offset().top - window.innerHeight;
 
         if (!counted && $(window).scrollTop() > oTop) {
 
-            $('.counter').each(function() {
+            counterEl.each(function() {
                 let $this = $(this),
                     countTo = $this.attr('data-count');
 

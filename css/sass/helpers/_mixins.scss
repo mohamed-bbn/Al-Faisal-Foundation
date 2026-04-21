@@ -217,12 +217,12 @@
 @mixin input {
     height: 52px;
     text-transform: $none;
-    border: 1px solid $ofwhite;
+    border: 1px solid #E8E8E8;
     @include transition(all 0.5s ease-in-out 0s);
     &:focus,
     &:hover,
     &:focus-visible {
-        border-color: $darkgreen;
+        border-color: $burgundy;
         outline: 0;
         outline-style: $none;
         box-shadow: none;
@@ -384,23 +384,21 @@
     margin-bottom: $com-spacing-3;
     li {
         display: $inline;
-        color: #323a2a94;
-        text-transform: capitalize;
+        color: #838383;
         @include transition(all 0.5s ease-in-out 0s);
         a {
-            color: $darkgreen;
+            color: $burgundy;
             position: relative;
             padding-inline-end: $com-spacing-4;
             @include transition(all 0.5s ease-in-out 0s);
-            text-transform: capitalize;
             &:hover {
                 text-decoration: underline;
             }
             &:before {
-                @include position(absolute, $top: -3px, $right: $zero);
+                @include position(absolute, $top: -3px, $left: $zero);
                 content: "/";
                 display: $inline;
-                color: $darkgreen;
+                color: $burgundy;
             }
         }
     }
