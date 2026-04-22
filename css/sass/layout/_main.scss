@@ -990,3 +990,172 @@
         }
     }
 }
+
+.value-item {
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: $com-spacing-3;
+        margin-top: $com-spacing-6;
+        @media (max-width: 1199px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width:999px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width:500px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .item {
+        position: relative;
+        background: $white;
+        border-radius: 20px;
+        border: 1px solid #E8E8E8;
+        overflow: hidden;
+        @media (max-width: 999px) {}
+        .inner {
+            position: relative;
+            background: $burgundy;
+            padding: $com-spacing-3;
+            padding-bottom: 56px;
+            min-height: 136px;
+            .title {
+                font-size: 22px;
+                text-align: center;
+                font-weight: 500;
+                color: $white;
+                @media (max-width: 999px) {}
+            }
+            .text {
+                color: $white;
+                font-size: 14px;
+                text-align: center;
+                line-height: 20px;
+                margin-top: $com-spacing-1;
+            }
+            .hero-wave {
+                position: absolute;
+                bottom: -1px;
+                left: $zero;
+                width: 102%;
+                color: $white;
+            }
+        }
+        .list {
+            padding: $com-spacing-3;
+            padding-top: $zero;
+            li {
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-1;
+                margin-bottom: $com-spacing-3;
+                color: $blak;
+                &:last-child {
+                    margin: $zero;
+                }
+                .icon {
+                    @include flex;
+                    min-width: 26px;
+                    max-width: 26px;
+                    height: 26px;
+                    border-radius: 50%;
+                    background: #efdee7;
+                }
+            }
+        }
+    }
+    &.researchers {
+        .rowbox {
+            grid-template-columns: repeat(4, 1fr);
+            @media (max-width: 1199px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (max-width:999px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (max-width:500px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        .item {
+            .inner {
+                @include flex;
+            }
+        }
+    }
+    .nots {
+        padding: $com-spacing-4;
+        margin-top: $com-spacing-6;
+        text-align: center;
+        border-radius: 12px;
+        background: #7f044314;
+        color: #7f0443b5;
+        border: 1px solid #7f044330;
+    }
+}
+
+.standards-item {
+    padding-top: $zero !important;
+    .item {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-9;
+        margin-top: $com-spacing-9;
+        @media(max-width: 999px) {
+            gap: $com-spacing-6;
+            margin-top: $com-spacing-6;
+        }
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .photo {
+            flex: 1;
+            background: #FBF5F3;
+            border-radius: 20px;
+            padding: $com-spacing-6;
+            @media(max-width: 999px) {
+                width: $fullwidth;
+                padding: $com-spacing-3;
+            }
+            img {
+                width: $fullwidth;
+                height: 400px;
+                object-fit: cover;
+                object-position: top;
+                border-radius: 20px;
+                @media(max-width: 999px) {
+                    height: 240px;
+                }
+            }
+        }
+        .list {
+            margin-top: $com-spacing-3;
+            li {
+                position: relative;
+                margin-top: $com-spacing-3;
+                padding-inline-start: $com-spacing-4;
+                color: $blak;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: $zero;
+                    top: $com-spacing-3;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: $burgundy;
+                }
+            }
+        }
+    }
+    .content {
+        flex: 1;
+    }
+    @media(max-width:999px) {
+        .item,
+        .item:nth-child(even) {
+            flex-direction: column;
+        }
+    }
+}
