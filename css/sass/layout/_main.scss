@@ -934,7 +934,7 @@
             content: '';
             @include position(absolute, $top: auto, $left: 0px, $right: 0px, $bottom: -24px);
             z-index: 1;
-            width: 2px;
+            width: 1px;
             height: 24px;
             margin: $zero $auto;
             background: #E8E8E8;
